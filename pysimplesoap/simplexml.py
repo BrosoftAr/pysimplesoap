@@ -438,7 +438,7 @@ class SimpleXMLElement(object):
     
     _element = property(lambda self: self.__elements[0])
 
-    def unmarshall(self, types, strict=True):
+    def unmarshall(self, types, strict=False):
         "Convert to python values the current serialized xml element"
         # types is a dict of {tag name: convertion function}
         # strict=False to use default type conversion if not specified
