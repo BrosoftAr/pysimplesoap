@@ -76,6 +76,7 @@ else:
             if httplib2.__version__ >= '0.7.0':
                 kwargs['disable_ssl_certificate_validation'] = cacert is None
                 kwargs['ca_certs'] = cacert
+            kwargs['disable_ssl_certificate_validation'] = cacert is None
             # downgrade to highest compatible protocol version available:
             if ssl:
                 # SSLv3 is obsolete, use only if requested
