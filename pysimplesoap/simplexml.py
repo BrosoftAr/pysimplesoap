@@ -55,7 +55,8 @@ class SimpleXMLElement(object):
             try:
                 # condition for special character
                 if isinstance(text, bytes):
-                    text = text.decode().replace("&#x1F;", "?").encode()
+                    text = text.decode().replace("&#x1F;", "?")
+                    text = text.replace("&#x1E;", "").encode()
                 self.__document = xml.dom.minidom.parseString(text)
             except:
                 log.error(text)
